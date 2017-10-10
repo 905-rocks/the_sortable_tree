@@ -2,7 +2,7 @@ module TheSortableTreeController
   # include TheSortableTreeController::Rebuild
   # include TheSortableTreeController::ExpandNode
   # include TheSortableTreeController::ReversedRebuild
-  
+
   module DefineVariablesMethod
     public
     def the_define_common_variables
@@ -13,7 +13,7 @@ module TheSortableTreeController
       ["@#{variable}", collection, klass]
     end
   end
-  
+
   module ExpandNode
     include DefineVariablesMethod
     def expand_node
@@ -39,7 +39,7 @@ module TheSortableTreeController
       prev_id   = params[:prev_id].to_i
       next_id   = params[:next_id].to_i
 
-      return render(nothing: true, status: :no_content) if parent_id.zero? && prev_id.zero? && next_id.zero?
+      return render(body: nil, status: :no_content) if parent_id.zero? && prev_id.zero? && next_id.zero?
 
       variable, collection, klass = self.the_define_common_variables
       variable = self.instance_variable_set(variable, klass.find(id))
@@ -52,10 +52,10 @@ module TheSortableTreeController
         variable.move_to_left_of klass.find(next_id)
       end
 
-      render(nothing: true, status: :ok)
+      render(body: nil, status: :ok)
     end
   end
-  
+
   module ReversedRebuild
     include DefineVariablesMethod
     public

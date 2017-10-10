@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,52 +12,52 @@
 
 ActiveRecord::Schema.define(version: 20130128160328) do
 
-  create_table "admin_pages", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.text     "secret_field"
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.integer  "depth"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "admin_pages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.text "secret_field"
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "article_categories", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.text     "secret_field"
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.integer  "depth"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "article_categories", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.text "secret_field"
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "inventory_categories", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.text     "secret_field"
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.integer  "depth"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "inventory_categories", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.text "secret_field"
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "pages", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.text     "secret_field"
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.integer  "depth"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.text "secret_field"
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

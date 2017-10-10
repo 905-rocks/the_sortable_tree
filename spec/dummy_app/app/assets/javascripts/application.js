@@ -2,7 +2,7 @@
   //= require jquery
   //= require jquery_ujs
   //= require jquery-ui/core
-  //= require jquery-ui/sortable
+  //= require jquery-ui/widgets/sortable
 
   //= require the_sortable_tree/jquery.ui.nestedSortable
 
