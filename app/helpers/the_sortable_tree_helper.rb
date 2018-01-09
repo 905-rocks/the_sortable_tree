@@ -95,7 +95,7 @@ module TheSortableTreeHelper
 
     if opts[:boost].empty?
       tree.each do |item|
-        num = item.parent_id || 0
+        num = item.parent_id || -1
         opts[:boost][num.to_s] = [] unless opts[:boost][num.to_s]
         opts[:boost][num.to_s].push item
       end
@@ -103,7 +103,7 @@ module TheSortableTreeHelper
 
     unless node
       # RENDER ROOTS
-      roots = opts[:boost]['0']
+      roots = opts[:boost]['-1']
 
       # Boost OFF
       # roots = tree.select{ |node| node.parent_id.blank? }
